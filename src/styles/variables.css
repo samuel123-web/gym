@@ -1,0 +1,60 @@
+:root {
+  /* Color Palette */
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-card: #161616;
+  --bg-card-hover: #1E1E1E;
+  --bg-input: #1A1A1A;
+  --border-color: #27272A;
+  --border-active: #F97316;
+
+  --text-main: #FFFFFF;
+  --text-muted: #A1A1AA;
+  --text-subtle: #71717A;
+  --text-inverse: #0A0A0A;
+
+  --accent-orange: #F97316;
+  --accent-orange-hover: #EA580C;
+  --accent-orange-glow: rgba(249, 115, 22, 0.25);
+  --accent-orange-dim: rgba(249, 115, 22, 0.12);
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing & Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.5s ease;
+
+  /* Container Boundaries */
+  --container-max: 1280px;
+  --nav-height: 80px;
+}
+
+/* Light Theme Support */
+[data-theme="light"] {
+  --bg-primary: #F4F4F5;
+  --bg-secondary: #E4E4E7;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FAFafa;
+  --bg-input: #FFFFFF;
+  --border-color: #D4D4D8;
+  --border-active: #F97316;
+
+  --text-main: #09090B;
+  --text-muted: #52525B;
+  --text-subtle: #71717A;
+  --text-inverse: #FFFFFF;
+
+  --accent-orange: #EA580C;
+  --accent-orange-hover: #C2410C;
+  --accent-orange-glow: rgba(234, 88, 12, 0.2);
+  --accent-orange-dim: rgba(234, 88, 12, 0.1);
+}
