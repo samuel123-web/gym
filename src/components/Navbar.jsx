@@ -23,6 +23,16 @@ export function Navbar({ onOpenJoinModal, currentLang, onToggleLang, currentThem
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.classList.add('scroll-locked');
+    } else {
+      document.body.classList.remove('scroll-locked');
+    }
+    return () => document.body.classList.remove('scroll-locked');
+  }, [mobileOpen]);
+
   // Close mobile drawer on route change
   useEffect(() => {
     setMobileOpen(false);
@@ -131,6 +141,16 @@ export function Navbar({ onOpenJoinModal, currentLang, onToggleLang, currentThem
           ))}
         </ul>
 
+        <div className="mobile-drawer-controls">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <Globe size={18} style={{ color: 'var(--accent-orange)' }} />
+            <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>{currentLang === 'am' ? 'ቋንቋ (Amharic)' : 'Language (English)'}</span>
+          </div>
+          <button className="lang-toggle-btn" onClick={onToggleLang}>
+            {currentLang === 'am' ? 'EN' : 'AM'}
+          </button>
+        </div>
+
         <div className="mobile-footer-cta">
           <Button
             variant="primary"
@@ -146,4 +166,5 @@ export function Navbar({ onOpenJoinModal, currentLang, onToggleLang, currentThem
       </div>
     </>
   );
+
 }

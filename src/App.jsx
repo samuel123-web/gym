@@ -9,6 +9,7 @@ import './styles/pages.css';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
+import { FloatingMobileBar } from './components/FloatingMobileBar';
 
 import { BookingModal } from './components/BookingModal';
 import { TrainerDetailModal } from './components/TrainerDetailModal';
@@ -142,6 +143,11 @@ export function App() {
 
         <Footer currentLang={lang} onShowToast={handleShowToast} />
       </div>
+
+      <FloatingMobileBar
+        onOpenJoinModal={handleOpenJoinModal}
+        currentLang={lang}
+      />
 
       {/* Global Modals */}
       <BookingModal

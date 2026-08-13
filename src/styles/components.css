@@ -469,22 +469,34 @@
 
 .modal-close-btn {
   position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  width: 36px;
-  height: 36px;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-full);
   background-color: var(--bg-input);
   color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
   transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .modal-close-btn:hover {
   color: var(--text-main);
   background-color: var(--accent-orange);
+}
+
+@media (max-width: 640px) {
+  .modal-backdrop {
+    padding: 0.75rem;
+  }
+  .modal-content {
+    padding: 1.5rem 1.15rem;
+    max-height: 92vh;
+    border-radius: var(--radius-md);
+  }
 }
 
 /* Form inputs */
@@ -517,6 +529,14 @@
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
+@media (max-width: 768px) {
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px !important; /* Prevents iOS Safari auto-zoom on input focus */
+  }
+}
+
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
@@ -528,6 +548,50 @@
 .form-error {
   color: #EF4444;
   font-size: 0.8rem;
+}
+
+/* Utility Responsive Grids */
+.responsive-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.responsive-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.responsive-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 992px) {
+  .responsive-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .responsive-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .responsive-grid-3,
+  .responsive-grid-4,
+  .responsive-grid-2,
+  .form-row-2col {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
 }
 
 /* Toast */
@@ -548,6 +612,113 @@
   animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+@media (max-width: 768px) {
+  .toast-banner {
+    bottom: 5.5rem;
+    left: 1rem;
+    right: 1rem;
+    padding: 0.85rem 1.15rem;
+    font-size: 0.9rem;
+  }
+}
+
 .toast-icon {
   color: var(--accent-orange);
 }
+
+/* Floating Mobile Quick Action Bar */
+.mobile-floating-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1900;
+  background-color: rgba(12, 12, 14, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .mobile-floating-bar {
+    display: flex;
+  }
+}
+
+.mobile-bar-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--accent-orange);
+  flex-shrink: 0;
+}
+
+.mobile-bar-primary-btn {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 46px;
+  background-color: var(--accent-orange);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--radius-md);
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 14px var(--accent-orange-glow);
+}
+
+.pulse-icon {
+  animation: pulseGlow 2s infinite;
+}
+
+/* Scroll To Top Button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 999;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--accent-orange);
+  color: var(--accent-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-3px);
+  background-color: var(--accent-orange);
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .scroll-top-btn {
+    bottom: 5.25rem;
+    left: 1rem;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+
+

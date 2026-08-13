@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, Tag } from 'lucide-react';
 
 export function LightboxModal({ item, onClose }) {
+  useEffect(() => {
+    if (item) {
+      document.body.classList.add('scroll-locked');
+    } else {
+      document.body.classList.remove('scroll-locked');
+    }
+    return () => document.body.classList.remove('scroll-locked');
+  }, [item]);
+
   if (!item) return null;
 
   return (

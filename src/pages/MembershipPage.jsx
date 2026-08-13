@@ -62,7 +62,7 @@ export function MembershipPage({ onOpenJoinModal }) {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', marginBottom: '6rem' }}>
+        <div className="responsive-grid-3" style={{ marginBottom: '4rem' }}>
           {pricingData.map((plan) => (
             <PricingCard
               key={plan.id}
@@ -74,7 +74,7 @@ export function MembershipPage({ onOpenJoinModal }) {
         </div>
 
         {/* Feature Comparison Matrix Table */}
-        <div style={{ marginBottom: '6rem' }}>
+        <div style={{ marginBottom: '4rem' }}>
           <SectionHeading
             badge="PLAN COMPARISON"
             title="FEATURE COMPARISON MATRIX"
@@ -82,45 +82,45 @@ export function MembershipPage({ onOpenJoinModal }) {
             center
           />
 
-          <div style={{ overflowX: 'auto', backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '1.5rem' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '650px' }}>
+          <div style={{ overflowX: 'auto', backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '1rem' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '600px' }}>
               <thead>
                 <tr style={{ borderBottom: '2px solid var(--border-color)' }}>
-                  <th style={{ padding: '1rem', color: 'var(--text-main)', fontSize: '1.1rem' }}>FEATURES & PERKS</th>
-                  <th style={{ padding: '1rem', color: 'var(--text-main)', textAlign: 'center', fontSize: '1.1rem' }}>BASIC (2,900 ETB)</th>
-                  <th style={{ padding: '1rem', color: 'var(--accent-orange)', textAlign: 'center', fontSize: '1.1rem' }}>PRO (5,900 ETB)</th>
-                  <th style={{ padding: '1rem', color: 'var(--text-main)', textAlign: 'center', fontSize: '1.1rem' }}>ELITE (9,900 ETB)</th>
+                  <th style={{ padding: '0.85rem', color: 'var(--text-main)', fontSize: '1rem' }}>FEATURES & PERKS</th>
+                  <th style={{ padding: '0.85rem', color: 'var(--text-main)', textAlign: 'center', fontSize: '1rem' }}>BASIC (2,900 ETB)</th>
+                  <th style={{ padding: '0.85rem', color: 'var(--accent-orange)', textAlign: 'center', fontSize: '1rem' }}>PRO (5,900 ETB)</th>
+                  <th style={{ padding: '0.85rem', color: 'var(--text-main)', textAlign: 'center', fontSize: '1rem' }}>ELITE (9,900 ETB)</th>
                 </tr>
               </thead>
               <tbody>
                 {membershipFeaturesMatrix.map((row, idx) => (
                   <tr key={idx} style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: idx % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)' }}>
-                    <td style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.95rem' }}>{row.feature}</td>
+                    <td style={{ padding: '0.85rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>{row.feature}</td>
                     
                     {/* Basic */}
-                    <td style={{ padding: '1rem', textAlign: 'center' }}>
+                    <td style={{ padding: '0.85rem', textAlign: 'center' }}>
                       {typeof row.basic === 'boolean' ? (
                         row.basic ? <Check size={20} style={{ color: 'var(--accent-orange)', margin: '0 auto' }} /> : <X size={20} style={{ color: 'var(--text-subtle)', margin: '0 auto' }} />
                       ) : (
-                        <span style={{ fontSize: '0.9rem', color: 'var(--text-main)' }}>{row.basic}</span>
+                        <span style={{ fontSize: '0.85rem', color: 'var(--text-main)' }}>{row.basic}</span>
                       )}
                     </td>
 
                     {/* Pro */}
-                    <td style={{ padding: '1rem', textAlign: 'center', backgroundColor: 'rgba(249, 115, 22, 0.04)' }}>
+                    <td style={{ padding: '0.85rem', textAlign: 'center', backgroundColor: 'rgba(249, 115, 22, 0.04)' }}>
                       {typeof row.pro === 'boolean' ? (
                         row.pro ? <Check size={20} style={{ color: 'var(--accent-orange)', margin: '0 auto' }} /> : <X size={20} style={{ color: 'var(--text-subtle)', margin: '0 auto' }} />
                       ) : (
-                        <span style={{ fontSize: '0.9rem', color: 'var(--accent-orange)', fontWeight: 700 }}>{row.pro}</span>
+                        <span style={{ fontSize: '0.85rem', color: 'var(--accent-orange)', fontWeight: 700 }}>{row.pro}</span>
                       )}
                     </td>
 
                     {/* Elite */}
-                    <td style={{ padding: '1rem', textAlign: 'center' }}>
+                    <td style={{ padding: '0.85rem', textAlign: 'center' }}>
                       {typeof row.elite === 'boolean' ? (
                         row.elite ? <Check size={20} style={{ color: 'var(--accent-orange)', margin: '0 auto' }} /> : <X size={20} style={{ color: 'var(--text-subtle)', margin: '0 auto' }} />
                       ) : (
-                        <span style={{ fontSize: '0.9rem', color: 'var(--text-main)', fontWeight: 700 }}>{row.elite}</span>
+                        <span style={{ fontSize: '0.85rem', color: 'var(--text-main)', fontWeight: 700 }}>{row.elite}</span>
                       )}
                     </td>
                   </tr>
@@ -131,13 +131,15 @@ export function MembershipPage({ onOpenJoinModal }) {
         </div>
 
         {/* Guarantee Banner */}
-        <div style={{ backgroundColor: 'var(--bg-secondary)', padding: '3rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '6rem' }}>
-          <ShieldCheck size={54} style={{ color: 'var(--accent-orange)', flexShrink: 0 }} />
-          <div>
-            <h4 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--text-main)' }}>100% SATISFACTION & MOBILITY GUARANTEE</h4>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-              Try IronForge risk-free. If within your first 14 days you feel our coaches or facilities do not meet your standards, we will refund your first month's payment immediately.
-            </p>
+        <div className="card responsive-grid-2" style={{ backgroundColor: 'var(--bg-secondary)', padding: '2rem 1.5rem', marginBottom: '4rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <ShieldCheck size={48} style={{ color: 'var(--accent-orange)', flexShrink: 0 }} />
+            <div>
+              <h4 style={{ fontSize: '1.25rem', marginBottom: '0.25rem', color: 'var(--text-main)' }}>100% SATISFACTION & MOBILITY GUARANTEE</h4>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                Try IronForge risk-free. If within your first 14 days you feel our coaches or facilities do not meet your standards, we will refund your first month's payment immediately.
+              </p>
+            </div>
           </div>
         </div>
 

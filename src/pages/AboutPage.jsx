@@ -70,14 +70,14 @@ export function AboutPage({ onOpenJoinModal }) {
         </div>
 
         {/* 4 Core Pillars */}
-        <div style={{ marginBottom: '6rem' }}>
+        <div style={{ marginBottom: '4rem' }}>
           <SectionHeading
             badge="FOUNDATIONAL VALUES"
             title="WHAT DRIVES US EVERY DAY"
             center
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
+          <div className="responsive-grid-4">
             {values.map((v, i) => (
               <div key={i} className="card" style={{ padding: '2rem' }}>
                 <v.icon size={36} style={{ color: 'var(--accent-orange)', marginBottom: '1rem' }} />
@@ -89,8 +89,8 @@ export function AboutPage({ onOpenJoinModal }) {
         </div>
 
         {/* Facility Breakdown */}
-        <div style={{ backgroundColor: 'var(--bg-secondary)', borderRadius: 'var(--radius-lg)', padding: '3.5rem 2.5rem', border: '1px solid var(--border-color)', marginBottom: '6rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
+        <div style={{ backgroundColor: 'var(--bg-secondary)', borderRadius: 'var(--radius-lg)', padding: '2.5rem 1.5rem', border: '1px solid var(--border-color)', marginBottom: '4rem' }}>
+          <div className="responsive-grid-2" style={{ alignItems: 'center' }}>
             <div>
               <span className="section-badge">FACILITY SPECIFICATIONS</span>
               <h3 style={{ fontSize: '2.25rem', margin: '0.75rem 0 1rem 0' }}>DESIGNED FOR PEAK PERFORMANCE</h3>
@@ -98,7 +98,7 @@ export function AboutPage({ onOpenJoinModal }) {
                 Spread across 1,500 square meters in Bole Medhaniallem, IronForge offers designated strength zones, metabolic turf, a boxing ring, mind-body studios, and hydrotherapy recovery.
               </p>
 
-              <ul style={{ listStyle: 'none', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '2rem' }}>
+              <ul className="form-row-2col" style={{ listStyle: 'none', marginBottom: '2rem' }}>
                 <li style={{ color: 'var(--text-main)', fontSize: '0.95rem' }}>• 10+ Heavy Power Racks</li>
                 <li style={{ color: 'var(--text-main)', fontSize: '0.95rem' }}>• Eleiko & Rogue Olympic Bars</li>
                 <li style={{ color: 'var(--text-main)', fontSize: '0.95rem' }}>• 25-meter Sprint Turf</li>
@@ -116,19 +116,19 @@ export function AboutPage({ onOpenJoinModal }) {
               <img
                 src="/assets/hero_bg.jpg"
                 alt="IronForge Interior"
-                style={{ width: '100%', height: '380px', objectFit: 'cover', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}
+                style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}
               />
             </div>
           </div>
         </div>
 
         {/* Final Callout */}
-        <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h3 style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>READY TO SEE FOR YOURSELF?</h3>
           <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
             Claim your 7-day all-access trial pass and join the IronForge family today.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+          <div className="hero-cta-group">
             <Button variant="primary" icon={ArrowRight} onClick={() => onOpenJoinModal('Claim 7-Day Free Trial')}>
               CLAIM FREE TRIAL
             </Button>
@@ -141,3 +141,4 @@ export function AboutPage({ onOpenJoinModal }) {
     </div>
   );
 }
+

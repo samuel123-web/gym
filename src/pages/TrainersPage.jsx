@@ -49,11 +49,11 @@ export function TrainersPage({ onSelectTrainer, onOpenJoinModal }) {
         </div>
 
         {/* Coaching Banner */}
-        <div className="card" style={{ padding: '3.5rem 2.5rem', backgroundColor: 'var(--bg-card)', marginBottom: '5rem', border: '1px solid var(--border-color)' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
+        <div className="card" style={{ padding: '2.5rem 1.5rem', backgroundColor: 'var(--bg-card)', marginBottom: '4rem', border: '1px solid var(--border-color)' }}>
+          <div className="responsive-grid-2" style={{ alignItems: 'center' }}>
             <div>
               <span className="section-badge">1-ON-1 PERSONAL TRAINING</span>
-              <h3 style={{ fontSize: '2.25rem', margin: '0.75rem 0 1rem 0' }}>TAILORED EXCLUSIVELY TO YOUR PHYSIOLOGY</h3>
+              <h3 style={{ fontSize: '2rem', margin: '0.75rem 0 1rem 0' }}>TAILORED EXCLUSIVELY TO YOUR PHYSIOLOGY</h3>
               <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: '1.7' }}>
                 Skip the trial and error. Work directly with a dedicated coach who creates your periodized lifting scheme, tracks your bio-metrics, and guides your nutrition week by week.
               </p>
@@ -71,7 +71,7 @@ export function TrainersPage({ onSelectTrainer, onOpenJoinModal }) {
               <img
                 src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop"
                 alt="Personal Training"
-                style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: 'var(--radius-md)' }}
+                style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: 'var(--radius-md)' }}
               />
             </div>
           </div>

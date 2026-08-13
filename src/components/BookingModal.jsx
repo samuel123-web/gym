@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, CheckCircle, ShieldCheck } from 'lucide-react';
 import { Button } from './Button';
 
@@ -12,6 +12,15 @@ export function BookingModal({ isOpen, onClose, initialTitle, currentLang = 'am'
     preferredTime: isAmharic ? 'ጠዋት (ከ1:00 - 4:00)' : 'Morning (07:00 - 10:00)'
   });
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('scroll-locked');
+    } else {
+      document.body.classList.remove('scroll-locked');
+    }
+    return () => document.body.classList.remove('scroll-locked');
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -88,7 +97,7 @@ export function BookingModal({ isOpen, onClose, initialTitle, currentLang = 'am'
                 />
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="form-row-2col">
                 <div className="form-group">
                   <label className="form-label">{isAmharic ? 'የተመረጠ አገልግሎት' : 'Selected Option'}</label>
                   <select

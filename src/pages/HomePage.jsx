@@ -196,7 +196,7 @@ export function HomePage({ currentLang = 'am', onOpenJoinModal, onSelectProgram,
             center
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div className="responsive-grid-3">
             {siteConfig.whyChooseUs.map((feature, idx) => {
               const IconComp = iconMap[feature.icon] || Dumbbell;
               return (
@@ -261,7 +261,7 @@ export function HomePage({ currentLang = 'am', onOpenJoinModal, onSelectProgram,
             center
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', alignItems: 'stretch' }}>
+          <div className="responsive-grid-3" style={{ alignItems: 'stretch' }}>
             {pricingData.map((plan) => (
               <PricingCard
                 key={plan.id}
@@ -320,7 +320,7 @@ export function HomePage({ currentLang = 'am', onOpenJoinModal, onSelectProgram,
             center
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem' }}>
+          <div className="responsive-grid-2">
             {testimonialsData.map((testim) => (
               <TestimonialCard key={testim.id} testimonial={testim} currentLang={currentLang} />
             ))}
@@ -353,7 +353,7 @@ export function HomePage({ currentLang = 'am', onOpenJoinModal, onSelectProgram,
           <div className="schedule-list">
             {currentSchedule.classes.map((cls) => (
               <div key={cls.id} className="schedule-item">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+                <div className="schedule-item-content" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
                   <span className="schedule-time">{isAmharic ? cls.timeAm : cls.timeEn}</span>
                   <div>
                     <h4 style={{ fontSize: '1.2rem', color: 'var(--text-main)' }}>
@@ -365,7 +365,7 @@ export function HomePage({ currentLang = 'am', onOpenJoinModal, onSelectProgram,
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                <div className="schedule-item-actions" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                   <span style={{ fontSize: '0.8rem', color: 'var(--accent-orange)', fontWeight: 600 }}>
                     {cls.spotsLeft} {isAmharic ? "ቦታዎች ቀርተዋል" : "spots left"}
                   </span>
@@ -382,6 +382,7 @@ export function HomePage({ currentLang = 'am', onOpenJoinModal, onSelectProgram,
           </div>
         </div>
       </section>
+
 
       {/* 11. GALLERY MASONRY PREVIEW */}
       <section className="section">

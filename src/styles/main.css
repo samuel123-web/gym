@@ -70,6 +70,17 @@ img {
   display: block;
 }
 
+/* Mobile Touch & Tap Improvements */
+button, a, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+body.scroll-locked {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
 /* Container */
 .container {
   width: 100%;
@@ -78,10 +89,22 @@ img {
   padding: 0 1.5rem;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 /* Section Spacing */
 .section {
   padding: 6rem 0;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.25rem 0;
+  }
 }
 
 .section-dark {
@@ -142,3 +165,4 @@ img {
     scroll-behavior: auto !important;
   }
 }
+
